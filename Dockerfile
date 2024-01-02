@@ -13,6 +13,4 @@ RUN wget -O archive.tar.bz2 \
     tar xf archive.tar.bz2 -C /opt --transform='s|^[^/]\+|gcc-arm-toolchain|' && \
     rm archive.tar.bz2
 
-ENV PATH="/opt/gcc-arm-toolchain/bin:${PATH}"
-
-ENTRYPOINT ["/bin/bash", "-l", "-c"]
+ENV PATH=/opt/gcc-arm-toolchain/bin:$PATH
