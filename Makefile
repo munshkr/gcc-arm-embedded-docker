@@ -7,7 +7,7 @@ run: build
 	docker run -it --rm $(IMAGE):$(TAG) bash
 
 build:
-	docker build -t $(IMAGE):$(TAG) -t $(IMAGE):latest .
+	docker build --platform=linux/amd64 -t $(IMAGE):$(TAG) -t $(IMAGE):latest .
 
 push: build
 	docker push --all-tags $(IMAGE)
