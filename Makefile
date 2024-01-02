@@ -1,15 +1,16 @@
 .PHONY: build run clean
 
-TAG := munshkr/gcc-arm-embedded:latest
+IMAGE := munshkr/gcc-arm-embedded
+TAG := 10-2020q4
 
 run: build
-	docker run -it --rm $(TAG)
+	docker run -it --rm $(IMAGE):$(TAG)
 
 build:
-	docker build -t $(TAG) .
+	docker build -t $(IMAGE):$(TAG) -t $(IMAGE):latest .
 
 push: build
-	docker push $(TAG)
+	docker push $(IMAGE):$(TAG)
 
 clean:
-	docker rmi $(TAG)
+	docker rmi $(IMAGE)
