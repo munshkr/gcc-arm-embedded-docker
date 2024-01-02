@@ -10,7 +10,7 @@ build:
 	docker build -t $(IMAGE):$(TAG) -t $(IMAGE):latest .
 
 push: build
-	docker push $(IMAGE):$(TAG)
+	docker push --all-tags $(IMAGE)
 
 clean:
 	docker rmi $(IMAGE)
