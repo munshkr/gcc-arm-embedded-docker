@@ -15,4 +15,4 @@ RUN wget -O archive.tar.bz2 \
 
 ENV PATH="/opt/gcc-arm-toolchain/bin:${PATH}"
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash", "-l", "-c"]
