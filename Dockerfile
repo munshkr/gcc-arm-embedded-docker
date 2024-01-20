@@ -1,9 +1,10 @@
-FROM debian:bookworm-slim
+FROM ubuntu:20.04
 
-ENV LANG C.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update -y && apt-get install -y --no-install-recommends \
     build-essential \
+    ca-certificates \
     cmake \
     wget \
     && rm -rf /var/lib/apt/lists/*
@@ -13,4 +14,4 @@ RUN wget -O archive.tar.bz2 \
     tar xf archive.tar.bz2 -C /opt --transform='s|^[^/]\+|gcc-arm-toolchain|' && \
     rm archive.tar.bz2
 
-ENV PATH=/opt/gcc-arm-toolchain/bin:$PATH
+ENV PATH=$PATH:/opt/gcc-arm-toolchain/bin

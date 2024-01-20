@@ -1,7 +1,9 @@
 # gcc-arm-embedded-docker
 
-Debian-based image that includes Arm Embedded toolchain for cross-compilation,
+Ubuntu-based image that includes Arm Embedded toolchain for cross-compilation,
 gcc and cmake.
+
+Tested with the [Daisy Seed](https://github.com/electro-smith/libDaisy) platform.
 
 ## Example
 
