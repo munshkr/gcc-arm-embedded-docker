@@ -18,7 +18,7 @@ build:
   stage: build
 
   script:
-    - make
+    - make -j
 
   artifacts:
     paths:
